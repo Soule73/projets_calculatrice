@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="plateformes pour le developpement web ,tutoriels HTML , CSS , JavaScript , PHP et Python.">
+  <link rel="stylesheet" href="./dist/build.css">
+  <title>Calculatrice</title>
+</head>
+
+<body class="bg-green-500 select-none">
+
+  <div
+    class="neoDiv border-b-8 border-t border-x-4 border-slate-900 rounded-t-xl rounded-b-[45px] relative overflow-hidden max-w-[350px] min-w-[320px] pb-1 h-auto mx-auto mt-5">
+    <div class=" border-x-2 border-gray-400 pt-1 mx-1 px-1 pb-3">
+
+      <div class="grid grid-cols-2 w-full h-[65px]">
+        <div class="sds-text-shadow-inset grid text-slate-600 w-full h-full uppercase font-semibold pb-2 pl-5 text-lg">
+          <span class=" font-extrabold">Casio</span>
+          <span class=" text-red-800 italic font-serif lowercase ">fx-92</span>
+
+        </div>
+
+
+        <div class=" grid m-auto text-xl text-center">
+          <span id="date" class="sds-text-shadow-inset"></span>
+          <span class=" font-bold text-[13px]"><span class=" italic">Powered by </span><span
+              class=" text-blue-700 font-serif">SDS</span></span>
+        </div>
+
+      </div>
+
+      <div class="resulDiv pb-2 px-[3px] rounded">
+
+        <div>
+          <div class="resul bg-[#99a883] rounded-md  min-w-full h-[120px] ">
+
+            <span id="seconde" class=" hidden ml-10 mt-[1px] px-[1.7px] bg-black text-[#99a883]  absolute w-auto"
+              style="font-size: 9px;">S</span>
+            <span id="DegOrRad" class=" ml-20 mt-[1px] px-[1.7px] bg-black text-[#99a883] block absolute w-auto"
+              style="font-size: 9px;">R</span>
+            <input id="valeurDeCalcul" type="text" placeholder="0" readonly
+              class=" rounded-tl-md bg-inherit  rounded-tr-md px-1 text-black placeholder:text-black  mx-auto w-[95.99%] text-2xl h-1/2  hover:outline-none focus:outline-none">
+            <input id="resultasDeCalcul" type="text" value="" readonly
+              class="  rounded-bl-md bg-inherit  rounded-br-md px-1 text-black placeholder:text-black  hover:outline-none focus:outline-none text-right w-[95.99%] h-1/2 bottom-0 pt-2 text-2xl">
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class=" grid grid-cols-3 px-1 h-[115px] w-[100%] mx-auto">
+
+      <div class=" grid grid-rows-2 ">
+
+        <div class=" p-1 grid grid-cols-2 gap-1 border-l-2 border-gray-400 rounded-bl-lg">
+
+          <div class=" grid grid-rows-3 h-full">
+            <div class=" text-center text-red-500 font-bold text-[9px] uppercase">Seconde</div>
+            <button id="btnSeconde" class="bg-green-900 mx-1 row-span-2 rounded-2xl"></button>
+          </div>
+
+          <div class=" grid grid-rows-3 h-full">
+            <div class=" text-center uppercase text-red-800 font-bold" style="font-size:9px">Alpha</div>
+            <button id="btnAlpha" class="bg-green-900 mx-1 row-span-2 rounded-2xl"></button>
+          </div>
+
+        </div>
+
+        <div class=" grid grid-cols-2 gap-1 ml-[6px] border-t border-gray-400 rounded-tr-2xl">
+
+          <div class="  grid grid-rows-3 rounded-full">
+            <div class=" text-center text-red-500 font-bold text-xs">Abs
+            </div>
+            <button id="btnPourcentage" value="%" class="sds-btn-bg-slate-700 row-span-2">
+              %
+            </button>
+          </div>
+
+          <div class="  grid grid-rows-3 rounded-full">
+
+            <div class=" text-center text-red-500 font-bold text-xs">
+              <span id="XracineCarre">&Sqrt;</span>&squarf;
+            </div>
+
+            <button id="btnXauCarre" value="^&sup2;" class="sds-btn-bg-slate-700 row-span-2">
+              x&sup2;
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="  rounded-[50px] h-28 pt-2 pb-1 border-gray-400 px-1 border-b-2">
+
+        <div class="bg-green-900 sds-rounded_center grid grid-rows-3 w-full h-full rounded-full ">
+
+          <div class="mx-auto">
+
+            <button id="btnFlecheVersLeHaut" class="rounded-full w-auto mx-auto p-1 -rotate-90">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                class="w-6 h-6 text-green-700">
+                <path fill-rule="evenodd"
+                  d="M4.5 5.653c0-1.426 1.529-2.33 2.779-1.643l11.54 6.348c1.295.712 1.295 2.573 0 3.285L7.28 19.991c-1.25.687-2.779-.217-2.779-1.643V5.653z"
+                  clip-rule="evenodd"></path>
+              </svg>
+            </button>
+
+          </div>
+
+          <div class=" grid grid-cols-4">
+
+            <button id="btnFlecheVersLeGauche" class="rounded-full py-1 rotate-180 ">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                class="w-6 h-6  text-green-700">
+                <path fill-rule="evenodd"
+                  d="M4.5 5.653c0-1.426 1.529-2.33 2.779-1.643l11.54 6.348c1.295.712 1.295 2.573 0 3.285L7.28 19.991c-1.25.687-2.779-.217-2.779-1.643V5.653z"
+                  clip-rule="evenodd"></path>
+              </svg>
+            </button>
+
+            <span class="m-auto sds-text-shadow-inset text-green-900/50 text-center uppercase col-span-2 text-[13px]">
+              Replay
+            </span>
+
+            <button id="btnFlecheVersLeDroit" class="rounded-full py-1">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                class="w-6 h-6 text-green-700">
+                <path fill-rule="evenodd"
+                  d="M4.5 5.653c0-1.426 1.529-2.33 2.779-1.643l11.54 6.348c1.295.712 1.295 2.573 0 3.285L7.28 19.991c-1.25.687-2.779-.217-2.779-1.643V5.653z"
+                  clip-rule="evenodd"></path>
+              </svg>
+            </button>
+
+          </div>
+
+          <div class="mx-auto">
+            <button id="btnFlecheVersLeBas" class="rounded-full w-auto mx-auto p-1 rotate-90">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                class="w-6 h-6 text-green-700">
+                <path fill-rule="evenodd"
+                  d="M4.5 5.653c0-1.426 1.529-2.33 2.779-1.643l11.54 6.348c1.295.712 1.295 2.573 0 3.285L7.28 19.991c-1.25.687-2.779-.217-2.779-1.643V5.653z"
+                  clip-rule="evenodd"></path>
+              </svg>
+            </button>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class=" grid grid-rows-2 ">
+
+        <div class="p-1 grid grid-cols-2 gap-x-1 border-r-2 border-gray-400 rounded-br-lg">
+
+          <div class=" grid grid-rows-3 h-full">
+            <div class=" font-bold text-[8.5px]"><span class=" mr-1 uppercase">Mode</span><span
+                class=" uppercase text-red-600">config</span>
+            </div>
+            <button id="btnModeConfig" class="bg-green-900 mx-[10px] row-span-2 rounded-2xl "></button>
+          </div>
+
+          <div class=" grid grid-rows-3 h-full">
+            <div class=" text-center font-bold" style="font-size:9px">ON
+            </div>
+            <button id="btnOn" class="bg-green-900 mx-1 row-span-2 rounded-2xl "></button>
+          </div>
+
+        </div>
+
+        <div class=" grid grid-cols-2 gap-1 mr-[6px] border-t border-gray-400 rounded-tl-2xl">
+
+          <div class="  grid grid-rows-3 rounded-full">
+            <div id="XexposantTrois" class=" text-center text-red-500 font-bold text-xs">
+              &sup3;&Sqrt;&squarf;
+            </div>
+            <button id="btnXexposantTrois" value="^&sup3;" class="sds-btn-bg-slate-700 row-span-2">
+              x&sup3;
+            </button>
+          </div>
+
+          <div class="  grid grid-rows-3 rounded-full">
+            <div class=" text-center text-red-500 font-bold text-xs">
+              <sup class="text-[6px] sm:text-[10px]">&square;</sup>&Sqrt;&squarf;
+            </div>
+            <button id="btnXexposant" value="^" class="sds-btn-bg-slate-700 row-span-2">
+              x<sup>&squarf;</sup>
+            </button>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class=" w-full max-h-[405px] px-3 ">
+      <div class="h-full w-2 max-h-[405px] bg-slate-900 absolute left-0 -ml-1 border border-gray-500 rounded-full">
+      </div>
+      <div class="h-full w-2 max-h-[405px] bg-slate-900 absolute right-0 -mr-1 border border-gray-500 rounded-full">
+      </div>
+
+      <div class=" flex flex-col  w-full h-4/6">
+
+        <div class=" flex  w-full h-1/3 pt-1">
+
+          <div class="grid grid-rows-3 w-1/6 h-full ">
+            <div class=" text-center text-red-500 font-bold text-xs uppercase">pgcd
+            </div>
+            <div class=" row-span-2 mx-1">
+              <button id="btnPGCD" value="" class="sds-btn-bg-slate-700 w-full h-full uppercase "
+                style="font-size: 14px;">Calc
+              </button>
+            </div>
+          </div>
+
+          <div class="grid grid-rows-3 w-1/6 h-full ">
+            <div class=" text-center text-red-500 font-bold text-xs uppercase">ppcm
+            </div>
+            <div class=" row-span-2 mx-1">
+              <button id="btnPPCM" value="Y" class="sds-btn-bg-slate-700 w-full h-full uppercase text-[18px]">Y
+              </button>
+            </div>
+          </div>
+
+          <div class="grid grid-rows-3 w-1/6 h-full ">
+            <div class=" text-center text-red-500 font-bold text-xs uppercase">:
+            </div>
+            <div class=" row-span-2 mx-1">
+              <button id="btnPointVirgule" value="="
+                class="sds-btn-bg-slate-700 w-full h-full uppercase pb-1 text-[26px]">=
+              </button>
+            </div>
+          </div>
+
+          <div class="grid grid-rows-3 w-1/6 h-full ">
+            <div class=" text-center text-red-500 font-bold text-xs">ax10<sup>n</sup>
+            </div>
+            <div class=" row-span-2 mx-1">
+              <button id="btnaFoisDixexposant" value="X" class="sds-btn-bg-slate-700 w-full h-full uppercase"
+                style="font-size: 18px;">x
+              </button>
+            </div>
+          </div>
+
+          <div class="grid grid-rows-3 w-1/6 h-full ">
+            <div class=" text-center text-red-500 font-bold text-xs">10<sup
+                class="text-[10px] sm:text-[12px]">&squarf;</sup>
+            </div>
+            <div class=" row-span-2 mx-1">
+              <button id="btnDixexposant" value="log(" class="sds-btn-bg-slate-700 w-full h-full"
+                style="font-size: 18px;">log
+              </button>
+            </div>
+          </div>
+
+          <div class="grid grid-rows-3 w-1/6 h-full ">
+            <div class=" text-center text-red-500 font-bold text-xs">&exponentiale;<sup
+                class="text-[8px] sm:text-[10px]">&square;</sup>
+            </div>
+            <div class=" row-span-2 mx-1">
+              <button id="btnExposant" value="ln(" class="sds-btn-bg-slate-700 w-full h-full"
+                style="font-size: 18px;">ln
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+        <div class=" flex  w-full h-1/3">
+
+          <div class="grid grid-rows-3 w-1/6 h-full ">
+            <div class=" text-center text-red-500 font-bold text-xs"><span class=" float-left ml-1 mr-2">(-)</span><span
+                class=" text-red-800">A</span>
+            </div>
+            <div class=" row-span-2 mx-1">
+              <button id="btnParenthesetA" value=">Simp" class="sds-btn-bg-slate-700 w-full h-full py-1"
+                style="font-size: 15px;">Simp
+              </button>
+            </div>
+          </div>
+
+          <div class="grid grid-rows-3 w-1/6 h-full ">
+            <div class=" text-center text-red-500 font-bold text-xs"><span class="mr-1"
+                style="font-size: 9px;">Décomp</span><span class=" text-red-800">B</span>
+            </div>
+            <div class=" row-span-2 mx-1">
+              <button id="btnDecompetB" value="|-" class="sds-btn-bg-slate-700 w-full h-full flex"
+                style="font-size: 17px;"><span class=" ml-3">|</span>
+                <span class=" -ml-1 mt-1 ">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="w-4 h-6 text-white stroke-[5]">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12h-15"></path>
+                  </svg>
+                </span>
+              </button>
+            </div>
+          </div>
+
+          <div class="grid grid-rows-3 w-1/6 h-full ">
+            <div class=" text-center text-red-500 font-bold text-xs">
+              <span class=" float-right mr-2 text-red-800">C</span>
+            </div>
+            <div class=" row-span-2 mx-1">
+              <button id="btnFractionC" value="/" class="sds-btn-bg-slate-700 w-full h-full grid">
+                <span class=" -mt-[3.5px] sm:-mt-[6px] h-[3px] text-[6px] sm:text-[10px]">&square;</span>
+                <span class=" -mt-[7px] sm:-mt-[10px] mx-auto h-[1px]">_
+                </span>
+                <span class=" mt-[5px] sm:mt-[5px] text-[12px] sm:text-[18px]">&squf;</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="grid grid-rows-3 w-1/6 h-full ">
+            <div class=" text-center text-red-500 font-bold text-xs">
+              <span id="arcsin" class=" float-left ml-1 mr-1">sin-&sup1;</span><span class=" text-red-800">D</span>
+            </div>
+            <div class=" row-span-2 mx-1">
+              <button id="btnArcsinsD" value="sin(" class="sds-btn-bg-slate-700 w-full h-full"
+                style="font-size: 18px;">sin
+              </button>
+            </div>
+          </div>
+
+          <div class="grid grid-rows-3 w-1/6 h-full ">
+            <div class=" text-center text-red-500 font-bold text-xs">
+              <span id="arccos" class=" float-left ml-1 mr-1">cos-&sup1;</span><span class=" text-red-800">E</span>
+            </div>
+            <div class=" row-span-2 mx-1">
+              <button id="btnArccosE" value="cos(" class="sds-btn-bg-slate-700 w-full h-full"
+                style="font-size: 18px;">cos
+              </button>
+            </div>
+          </div>
+
+          <div class="grid grid-rows-3 w-1/6 h-full ">
+            <div class=" text-center text-red-500 font-bold text-xs">
+              <span id="arctan" class=" float-left ml-1 mr-1">tan-&sup1;</span><span class=" text-red-800">F</span>
+            </div>
+            <div class=" row-span-2 mx-1">
+              <button id="btnArctanF" value="tan(" class="sds-btn-bg-slate-700 w-full h-full"
+                style="font-size: 18px;">tan
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+        <div class=" flex  w-full h-1/3">
+
+          <div class="grid grid-rows-3 w-1/6 h-full ">
+            <div class=" text-center text-red-500 font-bold text-xs"><span>STO</span>
+            </div>
+            <div class=" row-span-2 mx-1">
+              <button id="btnSTO" value="" class="sds-btn-bg-slate-700 w-full h-full py-[3px]"
+                style="font-size: 15px;">RCL
+              </button>
+            </div>
+          </div>
+
+          <div class="grid grid-rows-3 w-1/6 h-full ">
+            <div class=" text-center text-red-500 font-bold text-xs"><span>&larr;</span>
+            </div>
+            <div class=" row-span-2 mx-1">
+              <button id="btnQuatrePointVirgule" value="°" class="sds-btn-bg-slate-700 w-full h-full"
+                style="font-size: 18px;"><span class=" text-xl">&deg;</span><sup class=" text-2xl">,,,</sup></button>
+            </div>
+          </div>
+
+          <div class="grid grid-rows-3 w-1/6 h-full ">
+            <div class=" text-center text-red-500 font-bold text-xs"><span class=" italic">x<sup>-1</sup></span>
+            </div>
+            <div class=" row-span-2 mx-1">
+              <button id="ParentheseOuvrant" value="(" class="sds-btn-bg-slate-700 w-full h-full">&#40;</button>
+            </div>
+          </div>
+
+          <div class="grid grid-rows-3 w-1/6 h-full ">
+            <div class=" text-center text-red-500 font-bold text-xs"><span class=" italic">x&#33;</span>
+            </div>
+            <div class=" row-span-2 mx-1">
+              <button id="ParentheseFermant" value=")" class="sds-btn-bg-slate-700 w-full h-full">&#41;
+              </button>
+            </div>
+          </div>
+
+          <div class="grid grid-rows-3 w-1/6 h-full ">
+            <div class=" text-center text-red-500 font-bold text-[10px]">
+              a+<span class="diagonal-fractions">a/c</span>&harr;<span class="diagonal-fractions">d/c</span>
+            </div>
+            <div class=" row-span-2 mx-1">
+              <button id="btnSD" value="" class="sds-btn-bg-slate-700 w-full h-full py-[2px]"
+                style="font-size: 15px;">S&harr;D</button>
+            </div>
+          </div>
+
+          <div class="grid grid-rows-3 w-1/6 h-full ">
+            <div class=" text-center text-red-500 font-bold  text-xs"><span class=" float-left ml-1 mr-2">M-</span><span
+                class=" text-red-800">M</span>
+            </div>
+            <div class=" row-span-2 mx-1">
+              <button id="btnMPlus" value="" class="sds-btn-bg-slate-700 w-full h-full"
+                style="font-size: 15px;">M+</button>
+            </div>
+          </div>
+
+        </div>
+
+        <div class=" flex  w-full h-1/3">
+
+          <div class="grid grid-rows-3 w-1/5 h-full ">
+            <div class=" text-center text-red-500 font-bold text-xs"><span class=" float-left ml-1 mr-2"></span>
+            </div>
+            <div class=" row-span-2 mx-1">
+              <button id="btnSept" value="7" class="sds-btn-bg-green-900">7</button>
+            </div>
+          </div>
+
+          <div class="grid grid-rows-3 w-1/5 h-full ">
+            <div></div>
+            <div class=" row-span-2 mx-1">
+              <button id="btnHuit" value="8" class="sds-btn-bg-green-900">8</button>
+            </div>
+          </div>
+
+          <div class="grid grid-rows-3 w-1/5 h-full ">
+            <div class=" text-center text-red-500 font-bold text-xs"><span class=" text-center ml-1 mr-2">EFF</span>
+            </div>
+            <div class=" row-span-2 mx-1">
+              <button id="btnNeuf" value="9" class="sds-btn-bg-green-900">9</button>
+            </div>
+          </div>
+
+          <div class="grid grid-rows-3 w-1/5 h-full ">
+            <div class=" text-center text-red-500 font-bold text-xs"><span class=" text-center ml-1 mr-2">EFF</span>
+            </div>
+            <div class=" row-span-2 mx-1">
+              <button id="btnSUPPR" class="sds-btn-bg-red-800">SUPPR</button>
+            </div>
+          </div>
+
+          <div class="grid grid-rows-3 w-1/5 h-full ">
+            <div class=" text-center text-red-500 font-bold text-xs"><span class=" text-center ml-1 mr-2">OFF</span>
+            </div>
+            <div class=" row-span-2 mx-1">
+              <button id="btnAC" class="sds-btn-bg-red-800">AC</button>
+            </div>
+          </div>
+
+        </div>
+
+        <div class=" flex  w-full h-1/3">
+
+          <div class="grid grid-rows-3 w-1/5 h-full ">
+            <div></div>
+            <div class=" row-span-2 mx-1">
+              <button id="btnQuatre" value="4" class="sds-btn-bg-green-900">4</button>
+            </div>
+          </div>
+
+          <div class="grid grid-rows-3 w-1/5 h-full ">
+            <div></div>
+            <div class=" row-span-2 mx-1">
+              <button id="btnCinq" value="5" class="sds-btn-bg-green-900">5</button>
+            </div>
+          </div>
+
+          <div class="grid grid-rows-3 w-1/5 h-full ">
+            <div></div>
+            <div class=" row-span-2 mx-1">
+              <button id="btnSix" value="6" class="sds-btn-bg-green-900">6</button>
+            </div>
+          </div>
+
+          <div class="grid grid-rows-3 w-1/5 h-full ">
+            <div class=" text-center text-red-500 font-bold text-xs">
+              <span>Ent</span>
+            </div>
+            <div class=" row-span-2 mx-1">
+              <button id="btnMul" value="&times;" class="sds-btn-bg-green-900">&times;</button>
+            </div>
+          </div>
+
+          <div class="grid grid-rows-3 w-1/5 h-full ">
+            <div class=" text-center text-red-500 font-bold text-xs">
+              <span>EntEx</span>
+            </div>
+            <div class=" row-span-2 mx-1">
+              <button id="btnDiv" value="&divide;" class="sds-btn-bg-green-900">&divide;</button>
+            </div>
+          </div>
+
+        </div>
+
+        <div class=" flex w-full h-1/3">
+
+          <div class="grid grid-rows-3 w-1/5 h-full ">
+            <div class=" text-center text-red-500 font-bold text-xs">
+              <span>|<sup>&minus;STAT&minus;</sup>|</span>
+            </div>
+            <div class=" row-span-2 mx-1">
+              <button id="btnUn" value="1" class="sds-btn-bg-green-900">1</button>
+            </div>
+          </div>
+
+          <div class="grid grid-rows-3 w-1/5 h-full ">
+            <div class=" text-center text-red-500 font-extrabold text-xs">
+              <span>|<sup>&minus;VERIFY&minus;</sup>|</span>
+            </div>
+            <div class=" row-span-2 mx-1">
+              <button id="btnDeux" value="2" class="sds-btn-bg-green-900">2</button>
+            </div>
+          </div>
+
+          <div class="grid grid-rows-3 w-1/5 h-full ">
+            <div class=" text-center text-red-500 font-bold text-xs">
+              <span>;</span>
+            </div>
+            <div class=" row-span-2 mx-1">
+              <button id="btnTrois" value="3" class="sds-btn-bg-green-900">3</button>
+            </div>
+          </div>
+
+          <div class="grid grid-rows-3 w-1/5 h-full ">
+            <div class=" text-center text-red-500 font-bold text-xs">
+              <span>Pol</span>
+            </div>
+            <div class=" row-span-2 mx-1">
+              <button id="btnPlus" value="+" class="sds-btn-bg-green-900">&#43;</button>
+            </div>
+          </div>
+
+          <div class="grid grid-rows-3 w-1/5 h-full ">
+            <div class=" text-center text-red-500 font-bold text-xs">
+              <span>Rec</span>
+            </div>
+            <div class=" row-span-2 mx-1">
+              <button id="btnMoins" value="-" class="sds-btn-bg-green-900">&minus;</button>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class=" flex  w-full h-2/6">
+
+        <div class="grid grid-rows-3 w-1/5 h-full ">
+          <div class=" text-center text-red-500 font-bold text-[10px]">
+            <span class=" float-left ml-1 mr-1">Rnd</span><span class=" text-red-800">Arond</span>
+          </div>
+          <div class=" row-span-2 mx-1">
+            <button id="btnZero" value="0" class="sds-btn-bg-green-900">0</button>
+          </div>
+        </div>
+
+        <div class="grid grid-rows-3 w-1/5 h-full ">
+          <div class=" text-center text-red-500 font-bold text-[9px]">
+            <span class=" float-left ml-1 mr-1">Ran#</span>
+            <span class=" text-red-800">RanInt</span>
+          </div>
+          <div class=" row-span-2 mx-1">
+            <button id="btnVirgule" value="," class="sds-btn-bg-green-900">,</button>
+          </div>
+        </div>
+
+        <div class="grid grid-rows-3 w-1/5 h-full ">
+          <div class=" text-center text-red-500 font-extrabold text-xs">
+            <span id="pi">&pi;</span>
+          </div>
+          <div class=" row-span-2 mx-1">
+            <button id="btnPi" value="&times;10^" class="sds-btn-bg-green-900"
+              style="font-size: 18px;">x10<sup>x</sup></button>
+          </div>
+        </div>
+
+        <div class="grid grid-rows-3 w-1/5 h-full ">
+          <div class=" text-center text-red-500 font-bold text-[10px]">
+            <span>DRG</span>
+          </div>
+          <div class=" row-span-2 mx-1">
+            <button id="btnDRG" value="Rép" class="sds-btn-bg-green-900" style="font-size: 18px;">Rép</button>
+          </div>
+        </div>
+
+        <div class="grid grid-rows-3 w-1/5 h-full">
+          <div></div>
+          <div class="row-span-2 mx-1">
+            <button id="btnEXE" class="sds-btn-bg-green-900" style="font-size: 18px;">EXE</button>
+          </div>
+        </div>
+
+      </div>
+      <div class=" font-extrabold text-xl py-1 w-full text-center text-slate-900 sds-text-shadow">Collége 2D+</div>
+    </div>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+
+</html>
